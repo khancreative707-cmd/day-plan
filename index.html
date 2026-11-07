@@ -97,17 +97,21 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 7:54 PM",
+updated:"Sat Nov 7, 8:55 PM",
 day:{items:[
- {id:"cafe",s:"12:30",e:"18:00",flex:1,t:"Café site build",sub:"Codex day. Screenshot outputs to Fo for review"},
- {id:"bs",s:"19:45",e:"20:20",t:"Business studies: 1 & 2 mark answers",sub:"Shifted to tonight: 35 focused minutes, your own writing"},
- {id:"ai",s:"20:25",e:"20:55",t:"AI learning hour",sub:"Harness PDF: chapter 3, nested loops"},
- {id:"wind",s:"21:00",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
- {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
+ {id:"cafe",s:"20:45",e:"21:30",flex:1,t:"Café work with Codex",sub:"Your evening, your project. Screenshot outputs to Fo"},
+ {id:"wind",s:"21:30",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
+ {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room. No answers tonight, they moved"},
+],
 ]},
 tomorrow:{items:[
- {t:"Plan lands tonight",sub:"After the 9:45 check-in and your plan-on-paper photo"},
- {t:"Full Sunday opens tomorrow",sub:"Fo writes it here before the morning text does"},
+ {t:"BS questions & answers",sub:"8:30 to 11:00, your own writing. The tonight carry-over"},
+ {t:"Subject assignments round 1",sub:"11:15 to 12:45. Hindi and Eco weighted first"},
+ {t:"Subject assignments round 2",sub:"1:30 to 3:15. Whatever's still due for college"},
+ {t:"AI learning hour",sub:"3:30 to 4:15, moved earlier. Evening belongs to the store"},
+ {t:"Father's store",sub:"Leave by 4:45, help your brother wrap up before Maghrib. Could run into the night, nothing planned after"},
+ {t:"Parents at Hassan",sub:"Function day. You hold the home front"},
+]},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
