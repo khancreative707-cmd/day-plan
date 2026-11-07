@@ -60,6 +60,7 @@ h3::after{content:"";flex:1;height:1px;background:var(--line)}
 .item.doned .t{text-decoration:line-through;color:var(--faint)}
 .item.doned .sub{color:var(--faint)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 16px;margin-bottom:9px;animation:rise .5s ease both}
+.gapnote{color:var(--faint);font-size:12px;margin-bottom:10px}
 .prayers{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
 .pr{display:flex;gap:5px;align-items:baseline;padding:6px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
 .pr b{color:var(--dim);font-weight:600}
@@ -96,7 +97,7 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 7:45 PM",
+updated:"Sat Nov 7, 7:54 PM",
 day:{items:[
  {id:"cafe",s:"12:30",e:"18:00",flex:1,t:"Café site build",sub:"Codex day. Screenshot outputs to Fo for review"},
  {id:"bs",s:"19:45",e:"20:20",t:"Business studies: 1 & 2 mark answers",sub:"Shifted to tonight: 35 focused minutes, your own writing"},
@@ -108,6 +109,10 @@ tomorrow:{items:[
  {t:"Plan lands tonight",sub:"After the 9:45 check-in and your plan-on-paper photo"},
  {t:"Full Sunday opens tomorrow",sub:"Fo writes it here before the morning text does"},
 ]},
+pocket:[
+ {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
+ {ic:"🧵",t:"Backup: laptop to server, basics",sub:"20 min · fits a commute or a waiting room"},
+],
 gaps:[
  {ic:"🚌",t:"Commuting",sub:"Fixed daily: AI audio, one podcast or video on what you're learning"},
  {ic:"⏳",t:"10 to 15 min gap",sub:"Review yesterday's notes or the last thing you learned"},
@@ -148,6 +153,8 @@ function render(){
  for(const it of DATA.tomorrow.items)h+=`<div class="card"><div class="t">${it.t}</div><div class="sub">${it.sub}</div></div>`;
  h+='</section><section><h3>Got a gap?</h3>';
  for(const g of DATA.gaps)h+=`<div class="anch"><div class="ic">${g.ic}</div><div><div class="t">${g.t}</div><div class="sub">${g.sub}</div></div></div>`;
+ h+='</section><section><h3>Pocket wins</h3><p class="gapnote">Small things Fo catches from your talk and files here. Pull one out when a gap opens.</p>';
+ for(const p of DATA.pocket)h+=`<div class="anch"><div class="ic">${p.ic}</div><div><div class="t">${p.t}</div><div class="sub">${p.sub}</div></div></div>`;
  h+='</section><section><h3>Standing system</h3>';
  for(const a of DATA.sys)h+=`<div class="anch"><div class="ic">${a.ic}</div><div><div class="t">${a.t}</div><div class="sub">${a.sub}</div></div></div>`;
  h+='</section>';
