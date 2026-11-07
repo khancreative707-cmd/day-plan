@@ -97,20 +97,21 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 9:45 PM",
+updated:"Sun Nov 8, 4:50 AM",
 day:{items:[
- {id:"cafe",s:"20:45",e:"21:15",flex:1,t:"Café work with Codex",sub:"Codex limit hit, paused. Output screenshots still welcome"},
- {id:"wind",s:"21:30",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
- {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room. No answers tonight, they moved"},
+ {id:"cont",s:"05:15",e:"08:30",t:"Morning container",sub:"Fajr chain, no phone first hour. Sunday add-ons: weigh-in, nails, room reset, digital declutter"},
+ {id:"bs",s:"08:30",e:"11:00",t:"BS questions & answers",sub:"Model papers, 1 and 2 mark answers, your own writing. The tonight carry-over"},
+ {id:"a1",s:"11:15",e:"12:45",t:"Subject assignments round 1",sub:"Hindi and Eco weighted first"},
+ {id:"a2",s:"13:30",e:"15:15",t:"Subject assignments round 2",sub:"Whatever's still due for college"},
+ {id:"ai",s:"15:30",e:"16:15",t:"AI learning hour",sub:"Moved earlier. Evening belongs to the store"},
+ {id:"dua",s:"16:20",e:"16:45",t:"Pocket win: memorize one new dua",sub:"On the ride to the store, before you arrive. One dua, 10 min"},
+ {id:"store",s:"16:45",e:"23:00",t:"Father's store",sub:"Leave by 4:45, help your brother wrap up before Maghrib. Could run into the night, nothing planned after"},
+ {id:"wind",s:"21:30",e:"21:55",t:"Evening wind-down",sub:"Parents at Hassan today, you hold the home front. Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
+ {id:"sleep",s:"22:00",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
 ]},
 tomorrow:{items:[
- {t:"BS questions & answers",sub:"8:30 to 11:00, your own writing. The tonight carry-over"},
- {t:"Subject assignments round 1",sub:"11:15 to 12:45. Hindi and Eco weighted first"},
- {t:"Subject assignments round 2",sub:"1:30 to 3:15. Whatever's still due for college"},
- {t:"AI learning hour",sub:"3:30 to 4:15, moved earlier. Evening belongs to the store"},
- {t:"Father's store",sub:"Leave by 4:45, help your brother wrap up before Maghrib. Could run into the night, nothing planned after"},
- {t:"Pocket win: memorize one new dua",sub:"On the ride to the store, before you arrive. One dua, 10 min"},
- {t:"Parents at Hassan",sub:"Function day. You hold the home front"},
+ {t:"College",sub:"9:00 to 4:00. Full plan lands at tonight's bedtime check"},
+ {t:"Café site polish",sub:"Paused, waits on your Codex monthly reset"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
