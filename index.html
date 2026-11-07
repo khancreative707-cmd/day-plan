@@ -60,6 +60,11 @@ h3::after{content:"";flex:1;height:1px;background:var(--line)}
 .item.doned .t{text-decoration:line-through;color:var(--faint)}
 .item.doned .sub{color:var(--faint)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 16px;margin-bottom:9px;animation:rise .5s ease both}
+.prayers{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.pr{display:flex;gap:5px;align-items:baseline;padding:6px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.pr b{color:var(--dim);font-weight:600}
+.pr.nextp{border-color:rgba(255,180,84,.45);background:rgba(255,180,84,.1)}
+.pr.nextp b,.pr.nextp{color:var(--acc)}
 .card .t{font-size:14px;font-weight:600}
 .anch{display:flex;gap:11px;align-items:flex-start;padding:11px 2px;border-bottom:1px solid rgba(255,255,255,.05)}
 .anch:last-child{border-bottom:0}
@@ -110,6 +115,7 @@ sys:[
  {ic:"🌙",t:"Bedtime system 9:45",sub:"Check-in, lights out 10"},
  {ic:"📘",t:"Board prep weighting",sub:"Eco and Hindi get dedicated slots every day"}
 ]};
+const PRAYERS=[['Fajr','05:15'],['Zuhr','12:30'],['Asr','16:15'],['Maghrib','17:55'],['Isha','19:20']];
 const DKEY='dp-done-'+new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toISOString().slice(0,10);
 let done=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]'));
 const save=()=>localStorage.setItem(DKEY,JSON.stringify([...done]));
@@ -120,7 +126,9 @@ function hero(){const n=nowMins();let cur=DATA.day.items.find(i=>state(i)==='cur
  h+=cur?`<h2>${cur.t}</h2><div class="sub">${cur.sub||''}</div>`:`<h2>Open slot</h2><div class="sub">Nothing scheduled right now. Check the timeline.</div>`;
  if(cur&&!cur.flex)h+=`<div class="bar"><i style="width:${pct}%"></i></div><div class="meta"><span>${fmt(cur.s)}</span><span>${pct}% through</span><span>${fmt(cur.e)}</span></div>`;
  if(next)h+=`<div class="nextup"><span>Next</span><b>${next.t} · ${fmt(next.s)}</b></div>`;
- return h+'</div>'}
+ const nm=nowMins();let pnext=true;
+ h+='<div class="prayers">'+PRAYERS.map(([n,t])=>{const p=mins(t)<=nm;const isnext=pnext&&p;if(isnext)pnext=false;return `<span class="pr${isnext?' nextp':''}">${n} <b>${fmt(t)}</b></span>`}).join('')+'</div>';
+ return h+'</div>'
 function render(){
  document.getElementById('dayname').textContent=new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
  document.getElementById('hero').innerHTML=hero();
