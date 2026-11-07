@@ -102,7 +102,6 @@ day:{items:[
  {id:"cafe",s:"20:45",e:"21:30",flex:1,t:"Café work with Codex",sub:"Your evening, your project. Screenshot outputs to Fo"},
  {id:"wind",s:"21:30",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
  {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room. No answers tonight, they moved"},
-],
 ]},
 tomorrow:{items:[
  {t:"BS questions & answers",sub:"8:30 to 11:00, your own writing. The tonight carry-over"},
@@ -111,7 +110,6 @@ tomorrow:{items:[
  {t:"AI learning hour",sub:"3:30 to 4:15, moved earlier. Evening belongs to the store"},
  {t:"Father's store",sub:"Leave by 4:45, help your brother wrap up before Maghrib. Could run into the night, nothing planned after"},
  {t:"Parents at Hassan",sub:"Function day. You hold the home front"},
-]},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
@@ -145,7 +143,7 @@ function hero(){const n=nowMins();let cur=DATA.day.items.find(i=>state(i)==='cur
  if(next)h+=`<div class="nextup"><span>Next</span><b>${next.t} · ${fmt(next.s)}</b></div>`;
  const nm=nowMins();let pnext=true;
  h+='<div class="prayers">'+PRAYERS.map(([n,t])=>{const p=mins(t)<=nm;const isnext=pnext&&p;if(isnext)pnext=false;return `<span class="pr${isnext?' nextp':''}">${n} <b>${fmt(t)}</b></span>`}).join('')+'</div>';
- return h+'</div>'
+ return h+'</div>'}
 function render(){
  document.getElementById('dayname').textContent=new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
  document.getElementById('hero').innerHTML=hero();
