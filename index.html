@@ -96,11 +96,11 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 5:35 PM",
+updated:"Sat Nov 7, 7:42 PM",
 day:{items:[
- {id:"cafe",s:"12:30",e:"18:00",flex:1,t:"Café site build",sub:"Codex is on it. Screenshot outputs to Fo for review",},
- {id:"bs",s:"16:15",e:"18:00",t:"Business studies: 1 & 2 mark answers",sub:"Your own writing, one question at a time"},
- {id:"ai",s:"18:50",e:"19:50",t:"AI learning hour",sub:"Harness PDF: chapters 3, 5 and 10"},
+ {id:"cafe",s:"12:30",e:"18:00",flex:1,t:"Café site build",sub:"Codex day. Screenshot outputs to Fo for review"},
+ {id:"bs",s:"19:45",e:"20:20",t:"Business studies: 1 & 2 mark answers",sub:"Shifted to tonight: 35 focused minutes, your own writing"},
+ {id:"ai",s:"20:25",e:"20:55",t:"AI learning hour",sub:"Harness PDF: chapter 3, nested loops"},
  {id:"wind",s:"21:00",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
  {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
 ]},
