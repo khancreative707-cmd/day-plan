@@ -96,7 +96,7 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 7:42 PM",
+updated:"Sat Nov 7, 7:45 PM",
 day:{items:[
  {id:"cafe",s:"12:30",e:"18:00",flex:1,t:"Café site build",sub:"Codex day. Screenshot outputs to Fo for review"},
  {id:"bs",s:"19:45",e:"20:20",t:"Business studies: 1 & 2 mark answers",sub:"Shifted to tonight: 35 focused minutes, your own writing"},
@@ -108,6 +108,14 @@ tomorrow:{items:[
  {t:"Plan lands tonight",sub:"After the 9:45 check-in and your plan-on-paper photo"},
  {t:"Full Sunday opens tomorrow",sub:"Fo writes it here before the morning text does"},
 ]},
+gaps:[
+ {ic:"🚌",t:"Commuting",sub:"Fixed daily: AI audio, one podcast or video on what you're learning"},
+ {ic:"⏳",t:"10 to 15 min gap",sub:"Review yesterday's notes or the last thing you learned"},
+ {ic:"📖",t:"30 min or more, unplanned",sub:"Next 10 pages of your current book, then check the timeline"},
+ {ic:"🪫",t:"Low energy",sub:"Rise and move for 2 minutes. Fallback: recite what you learned yesterday"},
+ {ic:"🚫",t:"Can't get started",sub:"2-minute rule: do the ugliest first step of the next task"},
+ {ic:"📵",t:"Waiting with no phone allowed",sub:"Run the adhan duas in your head, or 5 ayats from memory"},
+],
 sys:[
  {ic:"⏰",t:"Wake-up call 4:45 AM",sub:"Fallback ring at 5:15. Day plan text lands right after"},
  {ic:"🧠",t:"One hour of AI learning, daily",sub:"Non-negotiable, Maghrib to Isha"},
@@ -138,6 +146,8 @@ function render(){
   h+=`<div class="item ${st==='cur'?'cur':''}${dn}"><div class="time">${it.flex?'till '+fmt(it.e):fmt(it.s)+' – '+fmt(it.e)}</div><div class="body"><div class="t">${it.t}</div><div class="sub">${it.sub}</div>${pill[st]}</div><button class="btn" data-id="${it.id}" aria-label="mark done">${done.has(it.id)?'✓':''}</button></div>`}
  h+='</div></section><section><h3>Tomorrow</h3>';
  for(const it of DATA.tomorrow.items)h+=`<div class="card"><div class="t">${it.t}</div><div class="sub">${it.sub}</div></div>`;
+ h+='</section><section><h3>Got a gap?</h3>';
+ for(const g of DATA.gaps)h+=`<div class="anch"><div class="ic">${g.ic}</div><div><div class="t">${g.t}</div><div class="sub">${g.sub}</div></div></div>`;
  h+='</section><section><h3>Standing system</h3>';
  for(const a of DATA.sys)h+=`<div class="anch"><div class="ic">${a.ic}</div><div><div class="t">${a.t}</div><div class="sub">${a.sub}</div></div></div>`;
  h+='</section>';
