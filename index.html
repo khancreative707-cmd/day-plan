@@ -97,9 +97,10 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 9:16 PM",
+updated:"Sat Nov 7, 9:19 PM",
 day:{items:[
- {id:"cafe",s:"20:45",e:"21:30",flex:1,t:"Café work with Codex",sub:"Your evening, your project. Screenshot outputs to Fo"},
+ {id:"cafe",s:"20:45",e:"21:15",flex:1,t:"Café work with Codex",sub:"Codex limit hit, paused. Output screenshots still welcome"},
+ {id:"dua",s:"21:15",e:"21:30",t:"Pocket win: memorize one new dua",sub:"Pulled from the pocket list to fill the wait. 10 minutes, one dua"},
  {id:"wind",s:"21:30",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
  {id:"sleep",s:"21:55",e:"23:59",t:"Lights out",sub:"Phone docks outside the room. No answers tonight, they moved"},
 ]},
