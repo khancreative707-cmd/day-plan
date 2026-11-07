@@ -97,7 +97,7 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 7, 8:55 PM",
+updated:"Sat Nov 7, 9:16 PM",
 day:{items:[
  {id:"cafe",s:"20:45",e:"21:30",flex:1,t:"Café work with Codex",sub:"Your evening, your project. Screenshot outputs to Fo"},
  {id:"wind",s:"21:30",e:"21:50",t:"Evening wind-down",sub:"Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
@@ -142,7 +142,7 @@ function hero(){const n=nowMins();let cur=DATA.day.items.find(i=>state(i)==='cur
  if(cur&&!cur.flex)h+=`<div class="bar"><i style="width:${pct}%"></i></div><div class="meta"><span>${fmt(cur.s)}</span><span>${pct}% through</span><span>${fmt(cur.e)}</span></div>`;
  if(next)h+=`<div class="nextup"><span>Next</span><b>${next.t} · ${fmt(next.s)}</b></div>`;
  const nm=nowMins();let pnext=true;
- h+='<div class="prayers">'+PRAYERS.map(([n,t])=>{const p=mins(t)<=nm;const isnext=pnext&&p;if(isnext)pnext=false;return `<span class="pr${isnext?' nextp':''}">${n} <b>${fmt(t)}</b></span>`}).join('')+'</div>';
+ h+='<div class="prayers">'+PRAYERS.map(([n,t])=>{const p=mins(t)>nm;const isnext=pnext&&p;if(isnext)pnext=false;return `<span class="pr${isnext?' nextp':''}">${n} <b>${fmt(t)}</b></span>`}).join('')+'</div>';
  return h+'</div>'}
 function render(){
  document.getElementById('dayname').textContent=new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
