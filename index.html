@@ -97,7 +97,7 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sun Nov 8, 6:30 AM",
+updated:"Sun Nov 8, 6:40 AM",
 day:{items:[
  {id:"cont",s:"05:15",e:"07:00",t:"Morning container",sub:"Fajr chain, no phone first hour. Sunday add-ons: weigh-in, nails, room reset, digital declutter"},
  {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Morning slot today, mosque Asr jamaat is 4:45pm so the evening can't hold it"},
@@ -107,8 +107,8 @@ day:{items:[
  {id:"zuhr",s:"13:00",e:"13:45",t:"Zuhr + lunch",sub:"Jamaat 1:30pm, prayer first, then eat"},
  {id:"a2",s:"13:45",e:"16:15",t:"Subject assignments round 2",sub:"Whatever's still due for college"},
  {id:"asr",s:"16:30",e:"16:45",t:"Asr",sub:"Adhan 4:30, jamaat 4:45. Straight from jamaat you leave for the store"},
- {id:"dua",s:"16:45",e:"17:00",t:"Pocket win: memorize one new dua",sub:"On the ride to the store, before you arrive"},
- {id:"store",s:"17:00",e:"23:00",t:"Father's store",sub:"Help your brother wrap up before Maghrib (adhan 5:56). Could run into the night, nothing planned after"},
+ {id:"dua",s:"16:50",e:"17:05",t:"Pocket win: memorize one new dua",sub:"On the ride to the store, after Asr jamaat 4:45"},
+ {id:"store",s:"17:05",e:"23:00",t:"Father's store",sub:"Help your brother wrap up before Maghrib (adhan 5:56, jamaat 5:58). Could run into the night, nothing planned after"},
  {id:"isha",s:"19:45",e:"20:10",t:"Isha",sub:"Starts 7:45, jamaat 8pm"},
  {id:"wind",s:"21:30",e:"21:55",t:"Evening wind-down",sub:"Parents at Hassan today, you hold the home front. Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
  {id:"sleep",s:"22:00",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
