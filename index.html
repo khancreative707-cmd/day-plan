@@ -97,20 +97,17 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sun Nov 8, 8:21 AM",
+updated:"Mon Nov 9, 4:50 AM",
 day:{items:[
- {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Daily non-negotiable"},
- {id:"pw",s:"08:00",e:"08:15",t:"Pocket win: server to laptop",sub:"15 min, right after the AI hour"},
- {id:"bs",s:"08:30",e:"11:00",t:"BS questions & answers",sub:"Model papers, 1 and 2 mark answers, your own writing. The tonight carry-over"},
- {id:"a1",s:"11:15",e:"13:00",t:"Subject assignments round 1",sub:"Hindi and Eco weighted first"},
- {id:"tumkur",flex:true,s:"14:00",e:"15:00",t:"Drop parents to Tumkur",sub:"7 km, 15 min each way, ~30 min at the relatives' place. Whole trip about an hour. Exact time TBD, tell Fo"},
- {id:"a2",s:"14:15",e:"16:15",t:"Subject assignments round 2",sub:"Whatever's still due for college"},
- {id:"store",s:"17:20",e:"23:00",t:"Father's store",sub:"Leave ~4:45, help your brother wrap up in the evening. Could run into the night, nothing planned after"},
- {id:"sleep",s:"22:00",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
+ {id:"pdfs",s:"08:30",e:"09:00",t:"Send Fo the harness PDFs",sub:"Owed since Saturday, needed before the AI hour"},
+ {id:"ai",s:"09:15",e:"10:15",t:"AI learning hour",sub:"Daily, non-negotiable"},
+ {id:"a1",s:"10:30",e:"13:00",t:"Backlog assignments round 1",sub:"Hindi and Eco first, the weak subjects"},
+ {id:"bs",s:"14:00",e:"16:00",t:"BS model paper answers",sub:"1 and 2 mark questions, your own writing"},
+ {id:"cafe",s:"16:15",e:"18:00",flex:1,t:"Café site polish with Codex",sub:"Only if your monthly reset landed. If not, say so and it moves"},
 ]},
 tomorrow:{items:[
- {t:"College",sub:"9:00 to 4:00. Full plan lands at tonight's bedtime check"},
- {t:"Café site polish",sub:"Paused, waits on your Codex monthly reset"},
+ {t:"Diwali break day 2",sub:"No college. Full plan lands at the next bedtime check"},
+ {t:"Carry-over",sub:"Whatever Monday leaves: assignments, BS answers, café site"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
