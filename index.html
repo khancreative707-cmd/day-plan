@@ -97,17 +97,19 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sun Nov 8, 6:05 AM",
+updated:"Sun Nov 8, 6:30 AM",
 day:{items:[
- {id:"cont",s:"05:15",e:"08:30",t:"Morning container",sub:"Fajr chain, no phone first hour. Sunday add-ons: weigh-in, nails, room reset, digital declutter"},
+ {id:"cont",s:"05:15",e:"07:00",t:"Morning container",sub:"Fajr chain, no phone first hour. Sunday add-ons: weigh-in, nails, room reset, digital declutter"},
+ {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Morning slot today, mosque Asr jamaat is 4:45pm so the evening can't hold it"},
+ {id:"pw",s:"08:00",e:"08:15",t:"Pocket win: server to laptop",sub:"15 min, right after the AI hour"},
  {id:"bs",s:"08:30",e:"11:00",t:"BS questions & answers",sub:"Model papers, 1 and 2 mark answers, your own writing. The tonight carry-over"},
- {id:"a1",s:"11:15",e:"12:00",t:"Subject assignments round 1",sub:"Hindi and Eco weighted first. Stop 12:00, Zuhr is 12:05"},
- {id:"zuhr",s:"12:05",e:"12:45",t:"Zuhr + lunch",sub:"Prayer first, then eat"},
- {id:"a2",s:"13:30",e:"15:15",t:"Subject assignments round 2",sub:"Whatever's still due for college"},
- {id:"asr",s:"15:23",e:"15:45",t:"Asr",sub:"Straight after round 2"},
- {id:"ai",s:"15:45",e:"16:35",t:"AI learning hour",sub:"Moved earlier. Evening belongs to the store"},
- {id:"dua",s:"16:35",e:"16:45",t:"Pocket win: memorize one new dua",sub:"One dua before you walk out, then on the ride to the store"},
- {id:"store",s:"16:45",e:"23:00",t:"Father's store",sub:"Leave by 4:45, help your brother wrap up before Maghrib. Could run into the night, nothing planned after"},
+ {id:"a1",s:"11:15",e:"13:00",t:"Subject assignments round 1",sub:"Hindi and Eco weighted first. Zuhr time 1:00pm"},
+ {id:"zuhr",s:"13:00",e:"13:45",t:"Zuhr + lunch",sub:"Jamaat 1:30pm, prayer first, then eat"},
+ {id:"a2",s:"13:45",e:"16:15",t:"Subject assignments round 2",sub:"Whatever's still due for college"},
+ {id:"asr",s:"16:30",e:"16:45",t:"Asr",sub:"Adhan 4:30, jamaat 4:45. Straight from jamaat you leave for the store"},
+ {id:"dua",s:"16:45",e:"17:00",t:"Pocket win: memorize one new dua",sub:"On the ride to the store, before you arrive"},
+ {id:"store",s:"17:00",e:"23:00",t:"Father's store",sub:"Help your brother wrap up before Maghrib (adhan 5:56). Could run into the night, nothing planned after"},
+ {id:"isha",s:"19:45",e:"20:10",t:"Isha",sub:"Starts 7:45, jamaat 8pm"},
  {id:"wind",s:"21:30",e:"21:55",t:"Evening wind-down",sub:"Parents at Hassan today, you hold the home front. Shutdown ritual, plan tomorrow on paper, screens off 30 min"},
  {id:"sleep",s:"22:00",e:"23:59",t:"Lights out",sub:"Phone docks outside the room"},
 ]},
@@ -134,7 +136,7 @@ sys:[
  {ic:"🌙",t:"Bedtime system 9:45",sub:"Check-in, lights out 10"},
  {ic:"📘",t:"Board prep weighting",sub:"Eco and Hindi get dedicated slots every day"}
 ]};
-const PRAYERS=[['Fajr','05:03'],['Zuhr','12:05'],['Asr','15:23'],['Maghrib','17:53'],['Isha','19:05']];
+const PRAYERS=[['Fajr','05:35'],['Zuhr','13:30'],['Asr','16:45'],['Maghrib','17:58'],['Isha','20:00']];
 const DKEY='dp-done-'+new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toISOString().slice(0,10);
 let done=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]'));
 const save=()=>localStorage.setItem(DKEY,JSON.stringify([...done]));
