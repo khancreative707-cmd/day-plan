@@ -97,7 +97,7 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sun Nov 8, 6:45 AM",
+updated:"Sun Nov 8, 6:52 AM",
 day:{items:[
  {id:"cont",s:"05:15",e:"07:00",t:"Morning container",sub:"Fajr at home 5:15 to 5:45 (wudu + prayer), then quran and the Sunday add-ons: weigh-in, nails, room reset, digital declutter. No phone first hour"},
  {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Morning slot today, mosque Asr jamaat is 4:45pm so the evening can't hold it"},
@@ -131,7 +131,8 @@ gaps:[
 ],
 sys:[
  {ic:"⏰",t:"Wake-up call 4:45 AM",sub:"Fallback ring at 5:15. Day plan text lands right after"},
- {ic:"🧠",t:"One hour of AI learning, daily",sub:"Non-negotiable, Maghrib to Isha"},
+ {ic:"🧠",t:"One hour of AI learning, daily",sub:"Non-negotiable. Morning slot on days the evening belongs to the store"},
+ {ic:"📈",t:"Habit ramp: the 1% rule",sub:"Start small, one new habit at a time. Next one stacks only when the last one stuck"},
  {ic:"🏫",t:"College 9:00 to 4:00",sub:"Weekdays. Saturday 9:00 to 2:00"},
  {ic:"🌙",t:"Bedtime system 9:45",sub:"Check-in, lights out 10"},
  {ic:"📘",t:"Board prep weighting",sub:"Eco and Hindi get dedicated slots every day"}
