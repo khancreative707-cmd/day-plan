@@ -110,6 +110,25 @@ tomorrow:{items:[
  {t:"Diwali break day 2",sub:"No college. Full plan lands at the next bedtime check"},
  {t:"Carry-over",sub:"Whatever Monday leaves: assignments, BS answers, café site"},
 ]},
+pocket:[
+ {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
+ {ic:"🧵",t:"Backup: laptop to server, basics",sub:"20 min · fits a commute or a waiting room"},
+],
+gaps:[
+ {ic:"🚌",t:"Commuting",sub:"Fixed daily: AI audio, one podcast or video on what you're learning"},
+ {ic:"⏳",t:"10 to 15 min gap",sub:"Review yesterday's notes or the last thing you learned"},
+ {ic:"📖",t:"30 min or more, unplanned",sub:"Next 10 pages of your current book, then check the timeline"},
+ {ic:"🪫",t:"Low energy",sub:"Rise and move for 2 minutes. Fallback: recite what you learned yesterday"},
+ {ic:"🚫",t:"Can't get started",sub:"2-minute rule: do the ugliest first step of the next task"},
+ {ic:"📵",t:"Waiting with no phone allowed",sub:"Run the adhan duas in your head, or 5 ayats from memory"},
+],
+sys:[
+ {ic:"⏰",t:"Wake-up call 4:45 AM",sub:"Fallback ring at 5:15. Day plan text lands right after"},
+ {ic:"🧠",t:"One hour of AI learning, daily",sub:"Non-negotiable. Morning slot on days the evening belongs to the store"},
+ {ic:"🏫",t:"College 9:00 to 4:00",sub:"Weekdays. Saturday 9:00 to 2:00"},
+ {ic:"🌙",t:"Bedtime system 9:45",sub:"Check-in, lights out 10"},
+ {ic:"📘",t:"Board prep weighting",sub:"Eco and Hindi get dedicated slots every day"}
+]};
 const PRAYERS=[];
 const DKEY='dp-done-'+new Date(new Date().toLocaleString('en-US',{timeZone:TZ})).toISOString().slice(0,10);
 let done=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]'));
