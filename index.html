@@ -97,24 +97,17 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Tue Nov 10, 10:10 AM",
+updated:"Wed Nov 11, 4:52 AM",
 day:{items:[
- {id:"kick",s:"10:30",e:"11:00",t:"Fresh up + heavy breakfast",sub:"Protein first, no scroll"},
- {id:"pdfs",s:"10:45",e:"11:00",t:"Send Fo the harness PDFs",sub:"Owed since Saturday, 2 minutes before the desk"},
- {id:"a1",s:"11:00",e:"13:00",t:"Backlog assignments round 1",sub:"Hindi and Eco first, the weak subjects"},
- {id:"break1",s:"13:00",e:"14:15",t:"Midday break + lunch",sub:"Head out 1:20, back at the desk 2:15"},
- {id:"bs",s:"14:15",e:"16:15",t:"BS model paper answers",sub:"1 and 2 mark questions, your own writing"},
- {id:"break2",s:"16:15",e:"17:10",t:"Short break",sub:"Back at the desk 5:10 sharp"},
- {id:"cafe",s:"17:10",e:"17:50",flex:1,t:"Café site polish with Codex",sub:"Only if your monthly reset landed. If not, say so and it moves"},
- {id:"break3",s:"17:50",e:"18:15",t:"Quick reset",sub:"Step out, water, back for the AI hour"},
- {id:"ai",s:"18:15",e:"19:40",t:"AI learning hour",sub:"Daily, non-negotiable. Missed this morning so it runs the full hour"},
- {id:"dine",s:"19:40",e:"20:50",t:"Break + dinner",sub:"One real pause. Eat, reset, back at the desk 8:50"},
- {id:"a2",s:"20:50",e:"21:35",t:"Round 2 catch-up",sub:"Finish what round 1 left, BS review if assignments are done"},
- {id:"prog",s:"21:35",e:"21:45",t:"Send Fo the progress",sub:"Screenshot for digital work, one line for physical"},
+ {id:"pdfs",s:"07:00",e:"07:30",t:"Send Fo the harness PDFs",sub:"Owed since Saturday, before the AI hour"},
+ {id:"ai",s:"07:35",e:"08:35",t:"AI learning hour",sub:"Daily, non-negotiable, before college"},
+ {id:"college",s:"09:00",e:"16:00",t:"College",sub:"Back after the Diwali break, 9 to 4"},
+ {id:"acc",s:"17:15",e:"19:00",t:"Accountancy hand-copy + BS questions",sub:"Finish the partnership write-up and the short answers"},
+ {id:"bs",s:"19:00",e:"19:50",t:"BS model paper answers",sub:"1 and 2 mark questions, your own writing"},
 ]},
 tomorrow:{items:[
- {t:"College 9:00 to 4:00",sub:"Back from the Diwali break. Full plan lands at the bedtime check"},
- {t:"Carry-over",sub:"Whatever Tuesday leaves: assignments, BS answers, café site"},
+ {t:"College 9:00 to 4:00",sub:"Thursday. Full plan lands at the bedtime check"},
+ {t:"Carry-over",sub:"Whatever Wednesday leaves: accountancy, BS answers, harness PDFs"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
