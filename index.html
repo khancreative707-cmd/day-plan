@@ -97,13 +97,19 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Tue Nov 10, 4:50 AM",
+updated:"Tue Nov 10, 10:10 AM",
 day:{items:[
- {id:"pdfs",s:"08:30",e:"09:00",t:"Send Fo the harness PDFs",sub:"Owed since Saturday, needed before the AI hour"},
- {id:"ai",s:"09:15",e:"10:15",t:"AI learning hour",sub:"Daily, non-negotiable"},
- {id:"a1",s:"10:30",e:"13:00",t:"Backlog assignments round 1",sub:"Hindi and Eco first, the weak subjects"},
- {id:"bs",s:"14:00",e:"16:00",t:"BS model paper answers",sub:"1 and 2 mark questions, your own writing"},
- {id:"cafe",s:"16:15",e:"18:00",flex:1,t:"Café site polish with Codex",sub:"Only if your monthly reset landed. If not, say so and it moves"},
+ {id:"kick",s:"10:30",e:"11:00",t:"Fresh up + heavy breakfast",sub:"Protein first, then straight to the desk. No scroll"},
+ {id:"a1",s:"11:00",e:"13:00",t:"Backlog assignments round 1",sub:"Hindi and Eco first, the weak subjects"},
+ {id:"break1",s:"13:00",e:"14:15",t:"Midday break + lunch",sub:"Head out 1:20, back at the desk 2:15"},
+ {id:"bs",s:"14:15",e:"16:15",t:"BS model paper answers",sub:"1 and 2 mark questions, your own writing"},
+ {id:"break2",s:"16:15",e:"17:10",t:"Short break",sub:"Back at the desk 5:10 sharp"},
+ {id:"cafe",s:"17:10",e:"17:50",flex:1,t:"Café site polish with Codex",sub:"Only if your monthly reset landed. If not, say so and it moves"},
+ {id:"break3",s:"17:50",e:"18:15",t:"Quick reset",sub:"Step out, water, back for the AI hour"},
+ {id:"ai",s:"18:15",e:"19:40",t:"AI learning hour",sub:"Daily, non-negotiable. Missed this morning so it runs the full hour"},
+ {id:"dine",s:"19:40",e:"20:50",t:"Break + dinner",sub:"One real pause. Eat, reset, back at the desk 8:50"},
+ {id:"a2",s:"20:50",e:"21:35",t:"Round 2 catch-up",sub:"Finish what round 1 left, BS review if assignments are done"},
+ {id:"prog",s:"21:35",e:"21:45",t:"Send Fo the progress",sub:"Screenshot for digital work, one line for physical"},
 ]},
 tomorrow:{items:[
  {t:"College 9:00 to 4:00",sub:"Back from the Diwali break. Full plan lands at the bedtime check"},
