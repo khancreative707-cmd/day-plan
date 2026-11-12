@@ -97,16 +97,17 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Thu Nov 12, 4:50 AM"
+updated:"Fri Nov 13, 4:49 AM"
 day:{items:[
- {id:"flash",s:"06:00",e:"08:15",t:"Flash dad's phone",sub:"WhatsApp backup first, then the flash. Tell Fo the make and model when you start"},
- {id:"college",s:"09:00",e:"16:00",t:"College",sub:"9 to 4, leave ~10 min before Zuhr jamaat 1:30"},
- {id:"ai",s:"18:30",e:"19:30",t:"AI learning hour",sub:"Daily, non-negotiable, right after Maghrib jamaat"},
- {id:"acc",s:"20:20",e:"21:30",t:"Accountancy hand-copy + BS questions",sub:"Only what Wednesday night didn't finish"},
+ {id:"sql",s:"06:00",e:"08:15",t:"SQL programs in observation book",sub:"4 programs, lab is today — write them by hand"},
+ {id:"college",s:"09:00",e:"16:00",t:"College",sub:"9 to 4, SQL lab today, leave ~10 min before Zuhr jamaat 1:30"},
+ {id:"ai",s:"17:05",e:"17:55",t:"AI learning hour",sub:"Daily, non-negotiable, right after Asr jamaat"},
+ {id:"eco",s:"20:20",e:"21:15",t:"Eco + Hindi carry-over",sub:"Thursday's blocks that didn't land, after Isha jamaat"},
 ]},
 tomorrow:{items:[
- {t:"College 9:00 to 4:00",sub:"Friday. Full plan lands at the bedtime check"},
- {t:"Carry-over",sub:"Whatever Thursday leaves: accountancy, BS questions"},
+ {t:"Saturday 9:00 to 2:00",sub:"College morning, full plan at the bedtime check"},
+ {t:"Carry-over",sub:"Whatever Friday leaves: eco/hindi, AI hour"},
+ {t:"Harness PDFs",sub:"Send them in the afternoon slot if still owed"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
