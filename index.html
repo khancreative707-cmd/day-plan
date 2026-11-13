@@ -97,17 +97,19 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Fri Nov 13, 4:49 AM"
+updated:"Sat Nov 14, 4:50 AM"
 day:{items:[
- {id:"sql",s:"06:00",e:"08:15",t:"SQL programs in observation book",sub:"4 programs, lab is today — write them by hand"},
- {id:"college",s:"09:00",e:"16:00",t:"College",sub:"9 to 4, SQL lab today, leave ~10 min before Zuhr jamaat 1:30"},
- {id:"ai",s:"17:05",e:"17:55",t:"AI learning hour",sub:"Daily, non-negotiable, right after Asr jamaat"},
- {id:"eco",s:"20:20",e:"21:15",t:"Eco + Hindi carry-over",sub:"Thursday's blocks that didn't land, after Isha jamaat"},
+ {id:"sql",s:"06:00",e:"07:00",t:"SQL catch-up",sub:"Friday Nov 13's observation-book programs, if they didn't get written"},
+ {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Daily, non-negotiable, before college"},
+ {id:"college",s:"09:00",e:"14:00",t:"College",sub:"9 to 2, Saturday. Leave ~10 min before Zuhr jamaat 1:30"},
+ {id:"pdfs",flex:true,s:"14:30",e:"16:00",t:"Send Fo the harness PDFs",sub:"Afternoon slot, still owed since Sat Nov 7"},
+ {id:"eco",s:"17:05",e:"17:55",t:"Eco catch-up",sub:"Thursday's skipped blocks, after Asr jamaat"},
+ {id:"hindi",s:"20:20",e:"21:15",t:"Hindi catch-up",sub:"Thursday's skipped blocks, after Isha jamaat"},
 ]},
 tomorrow:{items:[
- {t:"Saturday 9:00 to 2:00",sub:"College morning, full plan at the bedtime check"},
- {t:"Carry-over",sub:"Whatever Friday leaves: eco/hindi, AI hour"},
- {t:"Harness PDFs",sub:"Send them in the afternoon slot if still owed"},
+ {t:"Polaris Family Day, Sunday",sub:"Afternoon gap plan + commute to Tapas Reading Cafe, decide at Sat 6pm"},
+ {t:"Sandbox: Nights & Weekends",sub:"Sun Nov 15, 8:00-10:30pm, Tapas Reading Cafe HSR Layout"},
+ {t:"Carry-over",sub:"Whatever Saturday leaves: eco/hindi, harness PDFs"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
