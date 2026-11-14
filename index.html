@@ -97,19 +97,28 @@ const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
 function nowMins(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:TZ}));return d.getHours()*60+d.getMinutes()}
 const fmt=t=>{const[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';const hh=h%12||12;return hh+':'+String(m).padStart(2,'0')+' '+ap};
 const DATA={
-updated:"Sat Nov 14, 4:50 AM"
+updated:"Sat Nov 14, 7:40 PM",
 day:{items:[
- {id:"sql",s:"06:00",e:"07:00",t:"SQL catch-up",sub:"Friday Nov 13's observation-book programs, if they didn't get written"},
- {id:"ai",s:"07:00",e:"08:00",t:"AI learning hour",sub:"Daily, non-negotiable, before college"},
- {id:"college",s:"09:00",e:"14:00",t:"College",sub:"9 to 2, Saturday. Leave ~10 min before Zuhr jamaat 1:30"},
- {id:"pdfs",flex:true,s:"14:30",e:"16:00",t:"Send Fo the harness PDFs",sub:"Afternoon slot, still owed since Sat Nov 7"},
- {id:"eco",s:"17:05",e:"17:55",t:"Eco catch-up",sub:"Thursday's skipped blocks, after Asr jamaat"},
- {id:"hindi",s:"20:20",e:"21:15",t:"Hindi catch-up",sub:"Thursday's skipped blocks, after Isha jamaat"},
+ {id:"w1",s:"05:15",e:"06:30",t:"Morning build block",sub:"Mars game at home: moon mode playable end to end, final bug pass. This is the last work block at home"},
+ {id:"w2",s:"06:30",e:"08:00",t:"Breakfast + pack",sub:"Protein first. Pack: laptop + charger, power bank charged, ticket QR on phone, water bottle, snack. Push the game repo to GitHub before you shut the laptop"},
+ {id:"w3",s:"08:00",e:"08:40",t:"Leave home for Kyatsandra station",sub:"Leave 8:00, platform by 8:40, 20 min buffer for the 9:00 train"},
+ {id:"w4",s:"09:00",e:"10:05",t:"Train: Kyatsandra to Yesvantpur",sub:"Only ~4 trains stop at this halt. Miss this one and the next is 11:42 = too late. Fallback if you oversleep: NH48 bus to Majestic, purple line from there, same plan"},
+ {id:"w5",s:"10:10",e:"11:05",t:"Metro: Yesvantpur to Whitefield side",sub:"Purple line direct from the station, eastbound toward Whitefield, about 50 min. Get off Garudachar Palya / Kundalahalli side"},
+ {id:"w6",s:"11:05",e:"11:25",t:"Auto to DivyaSree Technopark A3",sub:"EPIP Zone, Brookefield. About 10-15 min from the metro"},
+ {id:"w7",s:"11:25",e:"12:00",t:"Buffer at the campus",sub:"Find the venue, water, ticket ready on your phone. No cab was arranged, you arrived on your own, walk in relaxed"},
+ {id:"w8",s:"12:00",e:"15:00",t:"Polaris Family Day",sub:"Ticket on your phone. Eat there if food is on. Say you build AI agents, this room is contacts"},
+ {id:"w9",s:"15:00",e:"15:30",t:"Wrap + move out",sub:"Grab any materials/contacts, then head toward ITPL main road"},
+ {id:"w10",s:"15:30",e:"16:00",t:"Reach a cafe near ITPL",sub:"One with power sockets + wifi. Ask at the campus desk or pick the first one on ITPL main road"},
+ {id:"w11",s:"16:00",e:"18:45",t:"Big build block: game polish",sub:"The main work window of the day. By the end: all 3 meters working, events firing, score counting, looks presentation-ready"},
+ {id:"w12",s:"18:45",e:"19:45",t:"Travel: Whitefield to HSR Layout",sub:"About 17-20 km, 45-60 min Sunday evening. Cab direct, or bus to a metro-linked stop + purple line"},
+ {id:"w13",s:"19:45",e:"20:00",t:"Dinner + settle in",sub:"Protein first. Venue: Tapas Reading Cafe, 2nd floor, 2628, 27th Main Rd, above Juice Junction, HSR Layout Sector 1"},
+ {id:"w14",s:"20:00",e:"22:30",t:"Sandbox: Nights and Weekends",sub:"Build the game with the group, laptop out. Last live-work block before submission"},
+ {id:"w15",s:"22:30",e:"22:50",t:"SUBMIT, before you leave the cafe",sub:"Deadline is 11:59pm but submit from the cafe wifi NOW, not on the road. Fo runs the final check with you before the button"},
+ {id:"w16",s:"22:50",e:"23:20",t:"Head back",sub:"Two ways home: aunt's place in HBR Layout (about 20 min, crash there, come home Monday) or bus all the way to Kyathsandra (HSR to Majestic, then NH48, home about 1:30-2:00am). Your call"},
 ]},
 tomorrow:{items:[
- {t:"Polaris Family Day, Sunday",sub:"Afternoon gap plan + commute to Tapas Reading Cafe, decide at Sat 6pm"},
- {t:"Sandbox: Nights & Weekends",sub:"Sun Nov 15, 8:00-10:30pm, Tapas Reading Cafe HSR Layout"},
- {t:"Carry-over",sub:"Whatever Saturday leaves: eco/hindi, harness PDFs"},
+ {t:"Tonight: Mars game build sprint",sub:"Moon mode playable end to end before you sleep. If the night runs short, the 5:15am block finishes it"},
+ {t:"Backup before bed",sub:"Push the game repo to GitHub. If the laptop dies mid-event tomorrow, the code survives"},
 ]},
 pocket:[
  {ic:"🤲",t:"Memorize one new dua",sub:"10 min · fits any short gap"},
@@ -151,7 +160,7 @@ function render(){
  let h='<section><h3>Today</h3><div class="tl">';
  for(const it of DATA.day.items){const st=state(it);const dn=st==='done'?' doned':'';
   h+=`<div class="item ${st==='cur'?'cur':''}${dn}"><div class="time">${it.flex?'till '+fmt(it.e):fmt(it.s)+' – '+fmt(it.e)}</div><div class="body"><div class="t">${it.t}</div><div class="sub">${it.sub}</div>${pill[st]}</div><button class="btn" data-id="${it.id}" aria-label="mark done">${done.has(it.id)?'✓':''}</button></div>`}
- h+='</div></section><section><h3>Tomorrow</h3>';
+ h+='</div></section><section><h3>Tonight (Sat Nov 14)</h3>';
  for(const it of DATA.tomorrow.items)h+=`<div class="card"><div class="t">${it.t}</div><div class="sub">${it.sub}</div></div>`;
  h+='</section><section><h3>Got a gap?</h3>';
  for(const g of DATA.gaps)h+=`<div class="anch"><div class="ic">${g.ic}</div><div><div class="t">${g.t}</div><div class="sub">${g.sub}</div></div></div>`;
